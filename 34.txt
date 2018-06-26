@@ -1,0 +1,25 @@
+static String isPangram(String[] strings) {
+        
+        StringBuilder sb=new StringBuilder();
+        
+        for(int i=0;i<strings.length;i++)
+        {        
+                 HashSet hs=new HashSet();
+            for(int j=0;j<strings[i].length();j++)
+            {
+                char ch=strings[i].charAt(j);
+            if(Character.isLowerCase(ch))
+                  hs.add(ch);
+                
+                
+            }
+            if(hs.size()==26)
+            sb.append("1");
+            else 
+                sb.append("0");
+        }
+return sb.toString();        
+        
+
+    }
+

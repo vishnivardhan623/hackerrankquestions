@@ -1,0 +1,26 @@
+ static int[] getMaxElementIndices(int[] a, int[] rotate) {
+        int[] indices=new int[rotate.length];
+        int max=a[0];
+        int maxIndex=0;
+        for(int i=0;i<a.length;i++)
+        {
+           if(max<a[i])
+           {
+               max=a[i];
+               maxIndex=i;
+           }
+        }
+        for(int j=0;j<rotate.length;j++)
+        {
+            if((rotate[j]%a.length)<=maxIndex)
+            {
+                indices[j]=maxIndex-(rotate[j]%a.length);
+            }
+            else
+            {
+                indices[j]=a.length+maxIndex-(rotate[j]%a.length);
+            }
+        }
+        
+        return indices;              
+    }

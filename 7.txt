@@ -1,0 +1,29 @@
+class Dog extends Animal
+{
+Dog()
+{
+super(true,true);
+}
+public String getGreeting(){
+return "ruff";
+}
+}
+class Cow extends Animal
+{
+Cow()
+{
+super(true,false);
+}
+public String getGreeting(){
+return "moo";
+}
+}class Duck extends Animal
+{
+Duck()
+{
+super(false,false);
+}
+public String getGreeting(){
+return "quack";
+}
+}

@@ -1,0 +1,19 @@
+static String longestEvenWord(String sentence) {
+        int maxEvenLength=0;
+        String words[]=sentence.split("\\s+");
+        String res=null;
+        for(int i=0;i<words.length;i++)
+        {
+            
+            if(maxEvenLength<(words[i].length())&&(words[i].length()%2==0))
+            {
+                maxEvenLength=words[i].length();
+                res=words[i];
+            }
+            
+        }
+        if(maxEvenLength==0)
+            return "00";
+        return res;
+
+    }

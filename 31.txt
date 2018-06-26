@@ -1,0 +1,26 @@
+static long calculateAmount(int[] prices) {
+        long cost=prices[0];
+        long discount=0;
+        for(int i=1;i<prices.length;i++)
+        {
+            discount=minimum(prices,i-1);
+            if(discount<prices[i])
+                cost=cost+prices[i]-discount;
+            
+        }
+        return cost;
+
+    }
+     static   int minimum(int[] arr,int end)
+        {
+            int min=Integer.MAX_VALUE;
+            for(int j=0;j<=end;j++)
+            {
+                if(min>arr[j])
+                {
+                    min=arr[j];
+                }
+            }
+            return min;
+        }
+             

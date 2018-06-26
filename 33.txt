@@ -1,0 +1,25 @@
+static LinkedListNode distinct(LinkedListNode head) {
+        LinkedListNode current=head;
+        LinkedListNode prev=null;
+        HashSet<Integer> hs=new HashSet<Integer>();
+        
+        while(current!=null)
+        {
+            int value=current.val;
+            if(hs.contains(value))
+            {
+              prev.next=current.next;
+                
+            }
+            else
+            {
+                hs.add(value);
+                prev=current;
+            }
+            
+            current=current.next;
+            
+        }
+            
+     return head;
+    }

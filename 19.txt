@@ -1,0 +1,54 @@
+static String arrange(String sentence) {
+        String array[] =sentence.split("\\s+");
+	int arrayLength=array.length;
+	int lastStringLength=array[arrayLength-1].length();
+	array[arrayLength-1]=array[arrayLength-1].substring(0, lastStringLength-1);
+	
+	StringBuilder sb=new StringBuilder();
+	TreeMap<Integer,ArrayList<String>> tm= new TreeMap<Integer,ArrayList<String>>();
+	
+	for(int i=0;i<array.length;i++)
+	{
+		if(tm.containsKey(array[i].length()))
+				{
+			ArrayList<String> ab=new ArrayList<String>();
+			ab=tm.get(array[i].length());
+			ab.add(array[i]);
+			tm.put(array[i].length(), ab);
+				}
+		else
+		{
+			ArrayList<String> al=new ArrayList<String>();
+		al.add(array[i]);
+		tm.put(array[i].length(),al);
+		}
+	}
+	
+	Set<Integer> keys=tm.keySet();
+	ArrayList<String> aList=new ArrayList<String>();
+	for(Integer key:keys)
+	{
+		ArrayList<String> tempal=new ArrayList<String>();
+		
+		tempal=tm.get(key);
+		aList.addAll(tempal);
+	}
+	for(String temp:aList)
+	{
+		sb.append(temp.toLowerCase());
+		sb.append(" ");
+		
+	}
+	
+	
+	String result[]=sb.toString().split("//s+");
+	result[0]=result[0].substring(0, 1).toUpperCase()+result[0].substring(1);
+	result[result.length-1]=result[result.length-1].substring(0, result[result.length-1].length()-1)+".";
+		
+		StringBuilder sBuild=new StringBuilder();
+				for(int i=0;i<result.length;i++)
+			sBuild.append(result[i]);
+		return sBuild.toString();
+		
+
+    }

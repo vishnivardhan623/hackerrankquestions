@@ -1,0 +1,25 @@
+static int minimumMoves(int[] a, int[] m) {
+         int minNumberOfMoves=0;
+        
+        for(int i=0;i<a.length;i++)
+        {
+           minNumberOfMoves+=moves(a[i],m[i]);
+        }
+        
+        return minNumberOfMoves;
+    }
+     static int moves(int first,int second)
+{
+    int numberOfMoves=0;
+    while(first!=0)
+    {
+        numberOfMoves=numberOfMoves+Math.abs((first%10)-(second%10));
+        first/=10;
+        second/=10;
+    }
+    return numberOfMoves;
+    
+}
+
+
+

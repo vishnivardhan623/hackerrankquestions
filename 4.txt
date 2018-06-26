@@ -1,0 +1,45 @@
+static String[] braces(String[] values) {
+        
+        String balanced[]=new String[values.length];
+        for(int j=0;j<values.length;j++)
+        {
+            if(isBalanced(values[j]))
+                balanced[j]="YES";
+            else
+           balanced[j]="NO";   
+        }
+    return balanced;
+    }
+  static boolean isBalanced(String str)
+                      {
+                          Stack<String> stack=new Stack<String>();
+                           
+                          for(int i=0;i<str.length();i++)
+                          {
+                              
+               String temp=str.charAt(i)+"";
+                if(temp.equals("(")||temp.equals("{")||temp.equals("["))
+                   stack.push(temp);
+                   if(temp.equals(")")||temp.equals("}")||temp.equals("]"))
+                      {
+                          if(stack.isEmpty())
+                          {
+                              return false;
+                          }
+                          if(temp.equals(")")&&(stack.peek().equals("(")))
+                              stack.pop();
+                          if(temp.equals("]")&&(stack.peek().equals("[")))
+                              stack.pop();
+                          if(temp.equals("}")&&(stack.peek().equals("{")))
+                              stack.pop();
+                      }
+                      
+                        }
+                      
+                      if(stack.isEmpty())
+                      return true;
+                      
+                      return false;
+                      
+                          
+                      }

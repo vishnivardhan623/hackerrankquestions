@@ -1,0 +1,30 @@
+static long[] maxMin(String[] operations, int[] x) {
+        List<Integer> al=new LinkedList<Integer>();
+        long min,max;
+        long[] result=new long[x.length];
+        for(int i=0;i<operations.length;i++)
+        {
+            if(operations[i].equals("push"))
+            {
+                al.add(x[i]);
+                
+            }
+            else
+            {
+                al.remove(new Integer(x[i]));
+                
+            }
+            if(al.size()==1)
+            {
+                min=max=al.get(0);
+            }
+            else
+            {
+            min=Collections.min(al);
+                max=Collections.max(al);
+            }
+            result[i]=min*max;
+        }
+        return result;
+
+    }

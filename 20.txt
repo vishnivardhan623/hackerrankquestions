@@ -1,0 +1,17 @@
+static int[] minimalOperations(String[] words) {
+        int[] res=new int[words.length];
+        for(int i=0;i<words.length;i++)
+        {
+            int deletions=0;
+            for(int j=0;j<words[i].length()-1;j++)
+            {
+                if(words[i].charAt(j)==words[i].charAt(j+1))
+                {
+                    deletions++;
+                    j++;
+                }
+            }
+            res[i]=deletions;
+        }
+       return res;
+    }

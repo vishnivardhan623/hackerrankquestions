@@ -1,0 +1,23 @@
+static String winner(int[] andrea, int[] maria, String s) {
+        int andreaPoints,mariaPoints,temp;
+         andreaPoints=mariaPoints=0;
+        
+        if(s.equals("Even"))
+            temp=0;
+        else
+            temp=1;
+        for(int i=temp;i<andrea.length;i=i+2)
+        {
+            andreaPoints=andreaPoints+(andrea[i]-maria[i]);
+            mariaPoints=mariaPoints+(maria[i]-andrea[i]);
+        }
+       if(andreaPoints==mariaPoints)
+           return "Tie";
+        else if(andreaPoints>mariaPoints)
+            return "Andrea";
+        else
+            return "Maria";
+            
+        
+
+    }

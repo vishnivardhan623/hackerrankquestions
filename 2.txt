@@ -1,0 +1,25 @@
+static String mergeStrings(String a, String b) {
+    int m=a.length();
+        int n=b.length();
+        int minLength=Math.min(m,n);
+        int maxLength=Math.max(m,n);
+        StringBuilder result=new StringBuilder();
+        for(int i=0;i<minLength;i++)
+            result.append(a.charAt(i)+""+b.charAt(i));
+        if(m>n)
+        for(int temp=minLength;temp<maxLength;temp++)
+        
+            result.append(a.charAt(temp)+"");
+        
+        else
+            for(int temp=minLength;temp<maxLength;temp++)
+        
+            result.append(b.charAt(temp)+"");
+        
+            
+        
+    return result.toString();
+
+
+    }
+

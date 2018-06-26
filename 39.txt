@@ -1,0 +1,28 @@
+static int numberOfPairs(int[] a, long k) {
+        HashSet hs=new HashSet();
+        int numOfPairs=0;
+        for(int i=0;i<a.length;i++)
+        {
+            int secondNumber=(int)k-a[i];
+            if(a[i]==secondNumber)
+            {
+                if(hs.contains(secondNumber))
+                numOfPairs++;
+                
+            }
+           else if(hs.contains(secondNumber)&&hs.contains(a[i]))
+               continue;
+            else
+                   {
+                      if(hs.contains(secondNumber))
+                     numOfPairs++;
+                 
+                   }
+            
+            
+            hs.add(a[i]);
+                
+        }
+        return numOfPairs;
+
+    }
